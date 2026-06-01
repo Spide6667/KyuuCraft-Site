@@ -1,29 +1,21 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import NotFound from "./utils/NotFound";
-import { ThemeProvider } from "./utils/ThemeProvider";
-import Home from "@/components/Home";
-import Navbar from "@/components/NavBar";
-import "./App.css";
-import TestingStyling from "@/components/TestingStyling";
+import { Button } from "@/components/ui/button"
 
-const App: React.FC = () => {
+export function App() {
   return (
-    <div className="site-holder">
-      <ThemeProvider defaultTheme="Dark" storageKey="vite-ui-theme">
-        <Router>
-          <Navbar />
-          <div className="page-holder">
-            <Routes>
-              <Route path="/" Component={Home} />
-              <Route path="/test-styling" Component={TestingStyling} />
-              <Route path="/404" Component={NotFound} />
-              <Route path="*" Component={NotFound} />
-            </Routes>
-          </div>
-        </Router>
-      </ThemeProvider>
+    <div className="flex min-h-svh p-6">
+      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
+        <div>
+          <h1 className="font-medium">Project ready!</h1>
+          <p>You may now add components and start building.</p>
+          <p>We&apos;ve already added the button component for you.</p>
+          <Button className="mt-2">Button</Button>
+        </div>
+        <div className="font-mono text-xs text-muted-foreground">
+          (Press <kbd>d</kbd> to toggle dark mode)
+        </div>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
