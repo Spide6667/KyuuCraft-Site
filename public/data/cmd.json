@@ -1,0 +1,90 @@
+{
+    "Travel Commands": {
+        "/wrap": {
+            "desc": "Teleport to an area (must stay still for 3 seconds to complete the travel).",
+            "options": [
+                ["shop","Go to the shop center."],
+                ["EndPortal", "Go to the End Portal within the dungeon."]    
+            ]
+        },
+        "/spawn": {
+            "desc": "Teleport to the server spawn area (must stay still for 3 seconds to complete the travel)."
+        },
+        "/back": {
+            "desc": "Go back to the last point to teleported from"
+        },
+        "/tpa": {
+            "desc": "Teleport to a player (requires the player to accept, see `/tpaccept` cmd).",
+            "options": [
+                ["<player>","Who are you giving the money to?"]
+            ]
+        },
+        "/tpaccept": {
+            "desc": "Allow a player to teleport to you."
+        },
+        "/tpadeny": {
+            "desc": "Deny a player to teleport to you."
+        }
+    },
+    "Money Commands": {
+        "/sell": {
+            "desc": "Sell an item (does not work for unsellable items, see sell items page for full list).",
+                "options": [
+                    ["<ITEM_DESCRIPTION>", "Literal id for an item you want to sell."]
+                ]
+        },
+        "/sellall": {
+            "desc": "Sell all items in a group defined by the option chosen (does not work for unsellable items, see sell items page for full list).",
+            "options": [
+                ["hand","sells all of that item type from your inventory"],
+                ["inventory","sells ALL sellable items from your inventory"]
+            ]
+        },
+        "/sellgui": {
+            "desc": "Open a GUI where all items you place inside it will be sold (does not work for unsellable items, see sell items page for full list)."
+        },
+        "/pay": {
+            "desc": "Give money to a player",
+            "options": [
+                ["<player>","Who are you giving the money to?"]
+            ]
+        },
+        "/bal": {
+            "desc": "See how much money you have personally."
+        },
+        "/home": {
+            "desc": "Teleport to a home you have added.",
+            "options": [
+                ["bed", "Teleport to your set bed."]
+            ]
+        },
+        "/sethome": {
+            "desc": "Add a home to your list to teleport to (max 3 Homes)."
+        },
+        "/delhome": {
+            "desc": "Remove a home from your list to teleport to."
+        }
+    },
+    "Towny Commands": {
+        "/plot": {
+            "desc": "Manage your properties and territories",
+            "AKA": ["/plm"]
+        },
+        "/nation": {
+            "desc": "Manage your nation or join another",
+            "AKA": ["/n","/nm"]
+        },
+        "/tpa": {
+            "desc": "Manage your nation or join another",
+            "AKA": ["/n","/nm"]
+        },
+        "/town": {
+            "desc": "Manage your properties and territories",
+            "options": [
+                ["claim", "Create a town in the current chunk"],
+                ["claim outpost", "Create an outpost in the current chunk"]
+            ],
+            "AKA": ["/t","/tm"]
+        }
+    }
+}

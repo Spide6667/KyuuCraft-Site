@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 function Home() {
@@ -9,6 +11,11 @@ function Home() {
         <p>
             CONTENT
         </p>
+        <Link to ="/cmds">
+          <Button>
+            Server Cmd List
+          </Button>
+        </Link>
       </div>
     </>
   );

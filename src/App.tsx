@@ -1,6 +1,7 @@
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "@/pages/Home";
-import TestThemes from "./pages/TestThemes";
+import TestThemes from "@/pages/TestThemes";
+import CmdPage from "@/pages/CmdPage";
 import Navbar from "@/components/Navbar";
 import "@/App.css";
 
@@ -14,6 +15,7 @@ export function App() {
               <Routes>
                 <Route path="/" Component={Home} />
                 <Route path="/test/test-themes" Component={TestThemes} />
+                <Route path="/cmds" Component={CmdPage} />
               </Routes>
           </div>
           </div>
