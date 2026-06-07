@@ -89,7 +89,7 @@ const ProjectList = () => {
                 </div>
                 ))
             }
-          </ul> : <p>ERROR: No Data Provides!!</p>
+          </ul> : <p>ERROR: No Data Provided!!</p>
           }
         </div>
       )}

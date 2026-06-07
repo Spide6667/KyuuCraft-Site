@@ -11,7 +11,7 @@ export interface CmdObj {
 }
 
 export async function getCmdList(): Promise<CmdList> {
-  const response = await fetch("/data/cmd.json", {
+  const response = await fetch("data/cmd.json", {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -22,7 +22,7 @@ export async function getCmdList(): Promise<CmdList> {
   //await new Promise((resolve) => setTimeout(resolve, 1000 * 1000));
 
   const json = await response.json();
-  console.debug("JSON:", json);
+  console.debug("CMD JSON:", json);
 
   var categories: string[] = [];
   var data: Map<string, CmdObj[]> = new Map<string, CmdObj[]>();

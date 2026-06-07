@@ -9,6 +9,10 @@ Repo for Website for KyuuCraft Website. Designed using [Node.js](https://nodejs.
 - run `npm run dev` or `[npx,yarn,pnpm,bunx] vite` or `deno run -A npm:vite`
 - Should run in [localhost:5173/](http://localhost:5173/)
 
+## Building the site
+- When you push changes to the `main` branch, it should trigger a GitHub Action and within a minute, it should update
+  - **NOTE:** Site might not immediately update on your browser if something goes wrong. You will have to clear the cache to see what happens.
+
 ## Current Site versions
 - **Vite**: 8.0.14
 - **React**: 19.2.6
