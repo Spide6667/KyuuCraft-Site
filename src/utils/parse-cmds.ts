@@ -24,13 +24,13 @@ export async function getCmdList(): Promise<CmdList> {
   const json = await response.json();
   console.debug("CMD JSON:", json);
 
-  var categories: string[] = [];
-  var data: Map<string, CmdObj[]> = new Map<string, CmdObj[]>();
+  const categories: string[] = [];
+  const data: Map<string, CmdObj[]> = new Map<string, CmdObj[]>();
   for (const category in json) {
     const value = json[category];
     categories.push(category);
 
-    var temp: CmdObj[] = handleJsonObj(value);
+    const temp: CmdObj[] = handleJsonObj(value);
     data.set(category, temp);
   }
 
@@ -40,13 +40,13 @@ export async function getCmdList(): Promise<CmdList> {
   };
 };
 
-function handleJsonObj(value: Object): CmdObj[] {
+function handleJsonObj(value: object): CmdObj[] {
   console.log("Print", value);
-  var array:CmdObj[] = [];
+  const array:CmdObj[] = [];
 
   for (const [cmd, obj] of Object.entries(value)) {
     console.log(cmd, " = ", obj);
-    var temp = {"name": cmd, "desc": ""}
+    let temp = {"name": cmd, "desc": ""}
     for (const [piece,val] of Object.entries(obj)) {
       temp = {...temp, [piece]:val};
     }

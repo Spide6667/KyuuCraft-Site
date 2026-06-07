@@ -1,5 +1,5 @@
-export function handleJsonReturn(json:Object) : Map<string,string> {
-  var result: Map<string,string> = new Map<string,string>();
+export function handleJsonReturn(json:object) : Map<string,string> {
+  const result: Map<string,string> = new Map<string,string>();
 
   for (const [name, path] of Object.entries(json)) {
     result.set(name, path);
@@ -18,7 +18,7 @@ export async function getMarkdownPage() : Promise<Map<string,string> | null> {
     });
     const json = await response.json();
     console.debug("MD Pages JSON:", json);
-    var tempData = handleJsonReturn(json);
+    const tempData = handleJsonReturn(json);
     return tempData;
     } catch (error) {
     console.error("Error fetching data:", error);

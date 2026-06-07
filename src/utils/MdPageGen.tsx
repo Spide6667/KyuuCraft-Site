@@ -28,15 +28,20 @@ const ProjectDetails: React.FC = () => {
           const filePath = MdPath.get(name);
           console.debug("MD GEN PAGE: filePath = ", filePath);
           if (filePath) {
-            var temp = await (await fetch(filePath)).text();
+            const temp = await (await fetch(filePath)).text();
             setState({status:Status.Loaded, content: temp});
           }
           else {
             setState({status:Status.Error, errorCode:"Filepath was not defined!!"});
           }
         }
-      } catch (error) {
-        setState({status:Status.Error, errorCode:"Could not pull MD Data!!"});
+      }catch (error: unknown) { 
+        if (error instanceof Error) {
+          setState({status:Status.Error, errorCode:error.message});
+        } else {
+          setState({status:Status.Error, errorCode:"An unexpected error occurred" + String(error)});
+        }
+        
       }
     }
     fetchData();
